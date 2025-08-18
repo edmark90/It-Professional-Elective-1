@@ -3,7 +3,7 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+// scanner para sa user input
         System.out.print("Enter username: ");
         String name = sc.nextLine();
 
@@ -12,18 +12,51 @@ class Main {
 
      
         if (name.equals("mark")) {
+            
+            // nested loop para sa user login 
             if (pass.equals("1234")) {
                 System.out.println("====================");
                 System.out.println("HELLO USER > " + name);
+                System.out.println("CALCULATOR");
+                
+                System.out.print("enter a first number :");
+                int a = sc.nextInt();
+                
+                System.out.print("select operation (+ , *, / , - ) :");
+               char ope = sc.next().charAt(0);
+               
+                System.out.print("enter second number :");
+                int b = sc.nextInt();
+                
+                // another nested loop para sa operation
+                if(ope == '+'){
+                   int SUM = a+b;
+                    System.out.println(" ANSWER :" + SUM);
+                }
+                else if(ope == '*'){
+                    int multi = a*b;
+                    System.out.println(" ANSWER :" + multi);
+                }
+                else if(ope == '-'){
+                    int sub = a-b;
+                    System.out.println(" ANSWER :" + sub);
+                }
+                else if(ope == '/'){
+                    int devide = a/b;
+                    System.out.println(" ANSWER :" + devide);
+                }
+             
+            // else invalid password
             } else {
                 System.out.println("Invalid password");
             }
+            
+          // invalid user  
         } else {
             System.out.println("Invalid user");
         }
 
+        // closed for scanner
         sc.close();
     }
 }
-
-
