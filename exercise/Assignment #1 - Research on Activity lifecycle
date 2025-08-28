@@ -1,0 +1,63 @@
+Name : edmark basaya  								DATE: aug 28 2025
+Section: BSIT/3D						               Prof: Joane Pearl Carandang
+onCreate()
+onCreate() is called when the system first creates the activity, serving as the entry point for one-time setup like inflating the layout and restoring saved state from a Bundle.
+@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Log.d("Lifecycle", "onCreate");
+    }
+
+
+
+onStart()
+onStart() is invoked when the activity becomes visible to the user, transitioning it to the Started state just before it becomes interactive.
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("Lifecycle", "onStart");
+    }
+
+
+
+onResume()
+onResume() is called when the activity enters the foreground and can interact with the user, making it the ideal point to start user-facing features.
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("Lifecycle", "onResume");
+    }
+
+
+
+
+onPause()
+onPause() is triggered as the first sign the user is leaving the activity, indicating it's no longer in the foreground but might still be partially visible (e.g., in multi-window mode).
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("Lifecycle", "onPause");
+    }
+
+
+
+
+ @Override
+  onStop()
+onStop() occurs when the activity is no longer visible to the user, placing it in the Stopped state where it's still in memory but detached from the window.
+  protected void onStop() {
+        super.onStop();
+        Log.d("Lifecycle", "onStop");
+    }
+
+
+
+
+onDestroy()
+onDestroy() is the final callback invoked before the activity is destroyed, either because it's finishing normally or the system is reclaiming resources.
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("Lifecycle", "onDestroy");
+    }
